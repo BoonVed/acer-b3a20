@@ -6,7 +6,7 @@ before_install:
 before_script:
 - cd $HOME && mkdir twrp
 - wget -q https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.5.0_9-20210130/MinimalOmniRecovery-twrp-5.1-norepo-20210130.tzst -O $HOME/twrp.tzst
-- tar -xJf twrp.tzst --directory $HOME/twrp/ && rm twrp.tzst
+- tar --zstd -xf twrp.tzst --directory $HOME/twrp/ && rm twrp.tzst
 script:
   - cd $HOME/twrp/ && https://github.com/BoonVed/acer-b3a20.git device/Acer/B3-A20
   - git clone https://github.com/TwrpBuilder/android_device_generic_twrpbuilder.git device/generic/twrpbuilder
